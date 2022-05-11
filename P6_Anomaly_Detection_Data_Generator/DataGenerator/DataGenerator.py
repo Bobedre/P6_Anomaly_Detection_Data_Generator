@@ -8,7 +8,7 @@ class DataGenerator:
     @staticmethod
     def generateData():
         reading = DataGenerator.generateReadings()
-        sleepTime = 3#random.randint(3,10)
+        sleepTime = 10#random.randint(3,10)
         print(sleepTime)
         time.sleep(sleepTime)
         return reading

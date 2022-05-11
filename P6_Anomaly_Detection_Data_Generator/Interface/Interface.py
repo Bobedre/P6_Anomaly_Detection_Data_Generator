@@ -1,9 +1,12 @@
+import datetime
 import json
 import logging
 import time
 
 from signalrcore.hub_connection_builder import HubConnectionBuilder
 from DataGenerator.DataGenerator import DataGenerator
+from DataHandler.DataHandler import DataHandler
+
 
 class Interface:
     hub_connection = None
@@ -34,11 +37,14 @@ class Interface:
         self.hub_connection.stop()
 
     def onConnection(self):
+        self.hub_connection.send("addProbe", DataHandler.GetProbeInformation())
         self.generatorStart()
 
     def generatorStart(self):
         while True:
             result = DataGenerator.generateData()
+            result.insert(0, datetime.datetime.now().strftime("%m/%d/%Y %H:%M:%S"))
+            result.insert(0, DataHandler.GetProbeInformation()[0])
             self.sendResultToHub(result)
 
     def sendResultToHub(self, result):

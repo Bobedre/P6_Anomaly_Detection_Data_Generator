@@ -19,6 +19,7 @@ class DataHandler:
         header = next(csvreader)
         # print(header)
         for row in csvreader:
+
             for num in range(20, len(row) - 1):
                 if row[num] == '':
                     row[num] = float("nan")
@@ -87,5 +88,16 @@ class DataHandler:
             readings.dataInRows[randomNumber][item] = round(value, 2)
         return readings.dataInRows[randomNumber]
 
-
+    @staticmethod
+    def GetProbeInformation():
+        file = open('DataHandler/CityProbeData.csv')
+        csvreader = csv.reader(file)
+        header = next(csvreader)
+        row = next(csvreader)
+        probeid = row[header.index("serial")]
+        location = row[header.index("desc")]
+        lat = row[header.index("lat")]
+        lon = row[header.index("lon")]
+        print([probeid, location, lat, lon])
+        return [probeid, location, lat, lon]
 
