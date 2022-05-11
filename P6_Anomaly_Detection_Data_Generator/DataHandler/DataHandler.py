@@ -6,7 +6,7 @@ from urllib.request import DataHandler
 
 import numpy as np
 
-from P6_Anomaly_Detection_Data_Generator.DataHandler.Readings import Readings
+from DataHandler.Readings import Readings
 
 
 class DataHandler:

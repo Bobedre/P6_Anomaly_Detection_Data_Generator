@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/ P6_Anomaly_Detection_Data_Generator.iml" filepath="$PROJECT_DIR$/.idea/ P6_Anomaly_Detection_Data_Generator.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/Data_Generator.iml" filepath="$PROJECT_DIR$/.idea/Data_Generator.iml" />
     </modules>
   </component>
 </project>

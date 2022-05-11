@@ -1,13 +1,14 @@
 import random
 import time
 
-from  P6_Anomaly_Detection_Data_Generator.DataHandler.DataHandler import DataHandler
+from DataHandler.DataHandler import DataHandler
 
 class DataGenerator:
 
-    def generateData(self):
+    @staticmethod
+    def generateData():
         reading = DataGenerator.generateReadings()
-        sleepTime = random.randint(3,10)
+        sleepTime = 3#random.randint(3,10)
         print(sleepTime)
         time.sleep(sleepTime)
         return reading
